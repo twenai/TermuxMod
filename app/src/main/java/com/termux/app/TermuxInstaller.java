@@ -252,7 +252,7 @@ final class TermuxInstaller {
                 } finally {
                     activity.runOnUiThread(() -> {
                         try {
-                            progress.dismiss();
+                            dialog.dismiss();
                         } catch (RuntimeException e) {
                             // Activity already dismissed - ignore.
                         }
@@ -260,6 +260,26 @@ final class TermuxInstaller {
                 }
             }
         }.start();
+    }
+
+    /**
+     * Creates a custom bootstrap installer dialog with progress tracking.
+     */
+    private static AlertDialog createBootstrapDialog(Activity activity, AlertDialog.Builder builder) {
+        android.view.LayoutInflater inflater = activity.getLayoutInflater();
+        android.view.View dialogView = inflater.inflate(R.layout.dialog_bootstrap_installer, null);
+
+        final ProgressBar progressBar = dialogView.findViewById(R.id.bootstrap_progress_bar);
+        final TextView progressText = dialogView.findViewById(R.id.bootstrap_progress_text);
+        final TextView progressPercent = dialogView.findViewById(R.id.bootstrap_progress_percent);
+
+        builder.setView(dialogView)
+            .setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
+
+        return dialog;
     }
 
     public static void showBootstrapErrorDialog(Activity activity, Runnable whenDone, String message) {
