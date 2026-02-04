@@ -1,3 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Bootstrap Installer Dialog Colors -->
+    <color name="installer_dialog_bg">#FFFFFF</color>
+    <color name="installer_title_text">#1A1A1A</color>
+    <color name="installer_subtitle_text">#666666</color>
+    <color name="installer_progress_text">#424242</color>
+    <color name="installer_info_text">#757575</color>
+    <color name="installer_progress_bg">#E0E0E0</color>
+    <color name="installer_progress_accent">#2196F3</color>
+    <color name="installer_icon_bg">#E3F2FD</color>
+
+    <!-- Sidebar Colors -->
+    <color name="sidebar_bg">#F5F5F5</color>
+    <color name="sidebar_header_bg">#2196F3</color>
+    <color name="sidebar_item_text">#212121</color>
+    <color name="sidebar_item_selected_bg">#BBDEFB</color>
+    <color name="sidebar_divider">#EEEEEE</color>
+    <color name="sidebar_button_bg">#2196F3</color>
+    <color name="sidebar_button_text">#FFFFFF</color>
+
+    <!-- Settings Colors -->
+    <color name="settings_bg">#FAFAFA</color>
+    <color name="settings_category_bg">#FFFFFF</color>
+    <color name="settings_category_text">#1976D2</color>
+    <color name="settings_item_text">#212121</color>
+    <color name="settings_item_summary_text">#757575</color>
+
+    <!-- General Colors -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_dark_blue">#1976D2</color>
+    <color name="accent_color">#FF5722</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="medium_gray">#BDBDBD</color>
+    <color name="dark_gray">#424242</color>
+    <color name="divider_color">#EEEEEE</color>
 </resources>
