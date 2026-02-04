@@ -3,11 +3,11 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - aura-garden
       - 'github-releases/**'
   pull_request:
     branches:
-      - master
+      - aura-garden
 
 jobs:
   build:
