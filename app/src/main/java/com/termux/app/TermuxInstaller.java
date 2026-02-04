@@ -109,7 +109,10 @@ final class TermuxInstaller {
             Logger.logInfo(LOG_TAG, "The termux prefix directory \"" + TERMUX_PREFIX_DIR_PATH + "\" does not exist but another file exists at its destination.");
         }
 
-        final ProgressDialog progress = ProgressDialog.show(activity, null, activity.getString(R.string.bootstrap_installer_body), true, false);
+        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
+        final AlertDialog dialog = createBootstrapDialog(activity, dialogBuilder);
+        dialog.show();
+
         new Thread() {
             @Override
             public void run() {
