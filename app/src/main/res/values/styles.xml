@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="Theme.Termux" parent="@android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">#000000</item>
-        <item name="android:colorPrimary">#FF000000</item>
-        <item name="android:windowBackground">@android:color/black</item>
+    <style name="Theme.Termux" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@color/dark_bg</item>
+        <item name="android:colorPrimary">@color/dark_bg</item>
+        <item name="android:windowBackground">@color/dark_bg</item>
 
-        <!-- Seen in buttons on left drawer: -->
-        <item name="android:colorAccent">#212121</item>
+        <!-- Neon green accent for interactive elements -->
+        <item name="android:colorAccent">@color/neon_green</item>
         <item name="android:alertDialogTheme">@style/TermuxAlertDialogStyle</item>
         <!-- Avoid action mode toolbar pushing down terminal content when
              selecting text on pre-6.0 (non-floating toolbar). -->
@@ -25,12 +25,12 @@
     <!-- See https://developer.android.com/training/material/theme.html for how to customize the Material theme. -->
     <!-- NOTE: Cannot use "Light." since it hides the terminal scrollbar on the default black background. -->
     <style name="Theme.Termux.Black" parent="@android:style/Theme.Material.NoActionBar">
-        <item name="android:statusBarColor">#000000</item>
-        <item name="android:colorPrimary">#FF000000</item>
-        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@color/dark_bg</item>
+        <item name="android:colorPrimary">@color/dark_bg</item>
+        <item name="android:windowBackground">@color/dark_bg</item>
 
-        <!-- Seen in buttons on left drawer: -->
-        <item name="android:colorAccent">#FDFDFD</item>
+        <!-- Neon cyan accent for interactive elements -->
+        <item name="android:colorAccent">@color/neon_cyan</item>
         <!-- Avoid action mode toolbar pushing down terminal content when
              selecting text on pre-6.0 (non-floating toolbar). -->
         <item name="android:windowActionModeOverlay">true</item>
@@ -44,9 +44,11 @@
     </style>
 
 
-    <style name="TermuxAlertDialogStyle" parent="@android:style/Theme.Material.Light.Dialog.Alert">
+    <style name="TermuxAlertDialogStyle" parent="@android:style/Theme.Material.Dialog.Alert">
         <!-- Seen in buttons on alert dialog: -->
-        <item name="android:colorAccent">#212121</item>
+        <item name="android:colorAccent">@color/neon_green</item>
+        <item name="android:windowBackground">@color/installer_dialog_bg</item>
+        <item name="android:textColorPrimary">@color/light_gray</item>
     </style>
 
 </resources>
