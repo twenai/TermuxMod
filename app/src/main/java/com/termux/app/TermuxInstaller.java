@@ -8,6 +8,8 @@ import android.os.Environment;
 import android.system.Os;
 import android.util.Pair;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.termux.R;
 import com.termux.app.utils.CrashUtils;
