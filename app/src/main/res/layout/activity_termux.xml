@@ -83,6 +83,7 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:tint="@color/sidebar_button_text"
                         android:contentDescription="@string/action_open_settings" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <ListView
