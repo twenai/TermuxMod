@@ -81,8 +81,8 @@
                         android:padding="6dp"
                         android:src="@drawable/ic_settings"
                         android:background="?attr/selectableItemBackgroundBorderless"
-                        android:tint="@color/sidebar_button_text"
-                        android:contentDescription="@string/action_open_settings" />
+                        android:contentDescription="@string/action_open_settings"
+                        android:scaleType="centerInside" />
                     </LinearLayout>
                 </LinearLayout>
 
