@@ -38,24 +38,52 @@
                 android:layout_width="240dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
-                android:background="@android:color/white"
+                android:background="@color/sidebar_bg"
                 android:choiceMode="singleChoice"
-                android:divider="@android:color/transparent"
-                android:dividerHeight="0dp"
+                android:divider="@color/sidebar_divider"
+                android:dividerHeight="1dp"
                 android:descendantFocusability="blocksDescendants"
                 android:orientation="vertical">
 
+                <!-- Header Section -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:background="@color/sidebar_header_bg">
+
+                    <!-- Neon Accent Line -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@drawable/neon_accent_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sessions"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/sidebar_button_text" />
+
                     <ImageButton
                         android:id="@+id/settings_button"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="6dp"
                         android:src="@drawable/ic_settings"
-                        android:background="@null"
-                        android:contentDescription="@string/action_open_settings" />
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/action_open_settings"
+                        android:scaleType="centerInside" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <ListView
@@ -65,29 +93,49 @@
                     android:layout_gravity="top"
                     android:layout_weight="1"
                     android:choiceMode="singleChoice"
-                    android:longClickable="true" />
+                    android:longClickable="true"
+                    android:divider="@color/sidebar_divider"
+                    android:dividerHeight="1dp"
+                    android:listSelector="@color/sidebar_item_selected_bg" />
 
+                <!-- Footer Buttons Section -->
                 <LinearLayout
-                    style="?android:attr/buttonBarStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/sidebar_divider" />
 
                     <Button
                         android:id="@+id/toggle_keyboard_button"
-                        style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/action_toggle_soft_keyboard" />
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="4dp"
+                        android:padding="12dp"
+                        android:text="@string/action_toggle_soft_keyboard"
+                        android:textColor="@color/sidebar_button_text"
+                        android:background="@drawable/sidebar_button_neon"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/new_session_button"
-                        style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/action_new_session" />
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:padding="12dp"
+                        android:text="@string/action_new_session"
+                        android:textColor="@color/sidebar_button_text"
+                        android:background="@drawable/sidebar_button_neon"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 

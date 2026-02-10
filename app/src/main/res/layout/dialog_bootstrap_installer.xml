@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_bootstrap_background">
+
+    <!-- Top Accent Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/neon_accent_line"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Header Section with Icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="24dp">
+
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle_neon_bg">
+
+            <ProgressBar
+                android:id="@+id/bootstrap_icon_spinner"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:indeterminate="true" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Installing Termux"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/installer_title_text"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Setting up bootstrap packages"
+            android:textSize="13sp"
+            android:textColor="@color/installer_subtitle_text"
+            android:alpha="0.7" />
+    </LinearLayout>
+
+    <!-- Progress Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <ProgressBar
+            android:id="@+id/bootstrap_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:progress="0"
+            android:max="100"
+            android:progressDrawable="@drawable/progress_bar_installer"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/bootstrap_progress_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Preparing..."
+                android:textSize="12sp"
+                android:textColor="@color/installer_progress_text" />
+
+            <TextView
+                android:id="@+id/bootstrap_progress_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textSize="12sp"
+                android:textColor="@color/installer_progress_text"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Status Items -->
+    <LinearLayout
+        android:id="@+id/bootstrap_status_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <!-- Status items will be added dynamically -->
+    </LinearLayout>
+
+    <!-- Info Message -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This may take a minute. Please wait…"
+        android:textSize="12sp"
+        android:textColor="@color/installer_info_text"
+        android:gravity="center"
+        android:alpha="0.6"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Bottom Accent Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/neon_accent_line" />
+
+</LinearLayout>

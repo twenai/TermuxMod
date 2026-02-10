@@ -1,0 +1,6 @@
+{
+  "name": "android-project",
+  "scripts": {
+    "dev": "npx serve ."
+  }
+}

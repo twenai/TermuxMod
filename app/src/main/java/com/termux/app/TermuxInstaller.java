@@ -8,6 +8,8 @@ import android.os.Environment;
 import android.system.Os;
 import android.util.Pair;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.termux.R;
 import com.termux.app.utils.CrashUtils;
@@ -109,7 +111,10 @@ final class TermuxInstaller {
             Logger.logInfo(LOG_TAG, "The termux prefix directory \"" + TERMUX_PREFIX_DIR_PATH + "\" does not exist but another file exists at its destination.");
         }
 
-        final ProgressDialog progress = ProgressDialog.show(activity, null, activity.getString(R.string.bootstrap_installer_body), true, false);
+        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
+        final AlertDialog dialog = createBootstrapDialog(activity, dialogBuilder);
+        dialog.show();
+
         new Thread() {
             @Override
             public void run() {
@@ -249,7 +254,7 @@ final class TermuxInstaller {
                 } finally {
                     activity.runOnUiThread(() -> {
                         try {
-                            progress.dismiss();
+                            dialog.dismiss();
                         } catch (RuntimeException e) {
                             // Activity already dismissed - ignore.
                         }
@@ -257,6 +262,26 @@ final class TermuxInstaller {
                 }
             }
         }.start();
+    }
+
+    /**
+     * Creates a custom bootstrap installer dialog with progress tracking.
+     */
+    private static AlertDialog createBootstrapDialog(Activity activity, AlertDialog.Builder builder) {
+        android.view.LayoutInflater inflater = activity.getLayoutInflater();
+        android.view.View dialogView = inflater.inflate(R.layout.dialog_bootstrap_installer, null);
+
+        final ProgressBar progressBar = dialogView.findViewById(R.id.bootstrap_progress_bar);
+        final TextView progressText = dialogView.findViewById(R.id.bootstrap_progress_text);
+        final TextView progressPercent = dialogView.findViewById(R.id.bootstrap_progress_percent);
+
+        builder.setView(dialogView)
+            .setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
+
+        return dialog;
     }
 
     public static void showBootstrapErrorDialog(Activity activity, Runnable whenDone, String message) {
